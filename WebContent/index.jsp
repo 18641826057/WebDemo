@@ -7,6 +7,11 @@
 <title>首页</title>
 </head>
 <body>
-<h2>Welcome to here</h2>
+<h1>Hello World Struts2</h1>
+<form action="hello">
+	<label for="name">Please enter your name</label><br>
+	<input type="text" name="name"/>
+	<input type="submit" value="Enter"/>
+</form>
 </body>
 </html>
