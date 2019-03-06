@@ -9,9 +9,11 @@ public class HelloWorldAction {
 		System.out.println("getName:"+getName());
 		
 		if(getName().equals("") || getName() == null) {
-			return "error";
-		}else {
+			return "null";
+		}else if(getName().equals("伊文君")){
 			return "success";
+		}else {
+			return "error";
 		}
 		
 	}

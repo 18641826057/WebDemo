@@ -9,7 +9,7 @@
 <body>
 <h1>Hello World Struts2</h1>
 <form action="hello">
-	<label for="name">Please enter your name</label><br>
+	<label for="name">Please enter your name，我们将进行审核，符合身份后可以看到学生列表。</label><br><br>
 	<input type="text" name="name"/>
 	<input type="submit" value="Enter"/>
 </form>

@@ -11,6 +11,7 @@
     <package name="com.josh.action" extends="struts-default">
         
         <action name="hello" class="com.josh.action.HelloWorldAction" method="execute">
+        	<result name="null">/jsp/Null.jsp</result>
         	<result name="success">/jsp/HelloWorld.jsp</result>
         	<result name="error">/jsp/Error.jsp</result>
         </action>
