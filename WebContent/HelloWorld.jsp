@@ -9,6 +9,6 @@
 </head>
 <body>
 <h2>This is HelloWorld Page.</h2>
-Hello World, Welcome:<s:property value="name"/>
+Hello World, Welcome! <s:property value="name"/>
 </body>
 </html>
