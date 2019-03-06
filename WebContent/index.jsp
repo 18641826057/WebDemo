@@ -7,9 +7,6 @@
 <title>首页</title>
 </head>
 <body>
-
-<h2>你好，世界</h2><br>
-<h3>Hello,World!</h3>
-
+<h2>Welcome to here</h2>
 </body>
 </html>
