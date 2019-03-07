@@ -21,8 +21,8 @@ public class HelloWorldAction {
 			students = new ArrayList<Student>();
 			getStudentList();
 			for (Student student : students) {
-				System.out.println("编号："+student.getId()+"，姓名："+student.getName()+"，年龄："+student.getAge()+"，性别："+
-						student.getSex()+"，身份证号："+student.getCid()+"，学号："+student.getSid());
+				System.out.println("编号："+student.getId()+"，\t姓名："+student.getName()+"，\t年龄："+student.getAge()+"，\t性别："+
+						student.getSex()+"，\t身份证号："+student.getCid()+"，\t学号："+student.getSid());
 			}
 			return "success";
 		}else {
