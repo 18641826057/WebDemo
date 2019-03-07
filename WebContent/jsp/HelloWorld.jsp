@@ -11,7 +11,7 @@
 </head>
 <body>
 <h2>This is HelloWorld Page.</h2>
-Hello World, Welcome:<s:property value="name"/>访问我们的网站！<br>
+Hello World, Welcome:<s:property value="name"/> 访问我们的网站！<br>
 <table border="1" align="center">
 	<tr align="center">
 		<td width="50px">ID</td>
