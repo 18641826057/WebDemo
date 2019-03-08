@@ -10,6 +10,7 @@ public class HelloWorldAction {
 	
 	private String name;
 	private List<Student> students;
+	private Student student;
 	
 	public String execute() throws Exception{
 		
@@ -25,6 +26,10 @@ public class HelloWorldAction {
 						student.getSex()+"，\t身份证号："+student.getCid()+"，\t学号："+student.getSid());
 			}
 			return "success";
+		}else if (getName().equals("唯一")) {
+			student = new Student();
+			getOneStudent();
+			return "getone";
 		}else {
 			return "error";
 		}
@@ -34,6 +39,11 @@ public class HelloWorldAction {
 	public void getStudentList(){
 		StudentDao studentDao = new StudentDao();
 		students = studentDao.getStudentList();
+	}
+	
+	public void getOneStudent() {
+		StudentDao studentDao = new StudentDao();
+		student = studentDao.getOneStudent();
 	}
 
 	
@@ -50,5 +60,12 @@ public class HelloWorldAction {
 	public void setStudents(List<Student> students) {
 		this.students = students;
 	}
+	public Student getStudent() {
+		return student;
+	}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+	
 	
 }
