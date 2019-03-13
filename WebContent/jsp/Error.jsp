@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Error.css">
 <title>Error</title>
 </head>
 <body>
 <h2>This is Error Page.</h2>
-Sorry!<br>
-您没有权限访问学习列表！<br>
+Sorry!<br><br>
+查无此人！<br><br>
 </body>
 </html>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import com.josh.entity.Student;
 
@@ -21,18 +22,34 @@ public class StudentDao {
 		return session;
 	}
 	
+	//添加学生
+	public void addStudent(Student student) {
+		Session session = getSessionFactoryAndSession();
+		session.save(student);
+		session.getTransaction().commit();
+		
+	}
+	
+	//获取学生列表
 	public List<Student> getStudentList(){
 		List<Student> students = null;
 		
-		students = getSessionFactoryAndSession().createQuery("from Student").getResultList();
+		Session session = getSessionFactoryAndSession();
+		students = session.createQuery("from Student").getResultList();
 		
 		return students;
 	}
 	
-	public Student getOneStudent() {
-		Student student = new Student();
-		student = getSessionFactoryAndSession().get(Student.class, 3);
-		return student;
+	
+	//根据学生名字获取学生列表
+	public List<Student> getStudentList(String name) {
+		List<Student> students = null;
+		String sql = "from Student as s where s.name like:name";
+		Session session = getSessionFactoryAndSession();
+		Query query = session.createQuery(sql);
+		query.setString("name", "%"+name+"%"); 
+		students = query.list();
+		return students;
 	}
 
 }

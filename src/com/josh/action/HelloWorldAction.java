@@ -10,7 +10,6 @@ public class HelloWorldAction {
 	
 	private String name;
 	private List<Student> students;
-	private Student student;
 	
 	public String execute() throws Exception{
 		
@@ -26,12 +25,24 @@ public class HelloWorldAction {
 						student.getSex()+"，\t身份证号："+student.getCid()+"，\t学号："+student.getSid());
 			}
 			return "success";
-		}else if (getName().equals("唯一")) {
-			student = new Student();
-			getOneStudent();
-			return "getone";
 		}else {
-			return "error";
+			getStudentList(getName());
+			
+			if(students.size() == 0) {
+				System.out.println(students.size());
+				for (Student student : students) {
+					System.out.println("编号："+student.getId()+"，\t姓名："+student.getName()+"，\t年龄："+student.getAge()+"，\t性别："+
+							student.getSex()+"，\t身份证号："+student.getCid()+"，\t学号："+student.getSid());
+				}
+				return "error";
+			}else {
+				System.out.println(students.size());
+				for (Student student : students) {
+					System.out.println("编号："+student.getId()+"，\t姓名："+student.getName()+"，\t年龄："+student.getAge()+"，\t性别："+
+							student.getSex()+"，\t身份证号："+student.getCid()+"，\t学号："+student.getSid());
+				}
+				return "getone";
+			}
 		}
 		
 	}
@@ -41,9 +52,9 @@ public class HelloWorldAction {
 		students = studentDao.getStudentList();
 	}
 	
-	public void getOneStudent() {
+	public void getStudentList(String name) {
 		StudentDao studentDao = new StudentDao();
-		student = studentDao.getOneStudent();
+		students = studentDao.getStudentList(name);
 	}
 
 	
@@ -59,12 +70,6 @@ public class HelloWorldAction {
 	}
 	public void setStudents(List<Student> students) {
 		this.students = students;
-	}
-	public Student getStudent() {
-		return student;
-	}
-	public void setStudent(Student student) {
-		this.student = student;
 	}
 	
 	

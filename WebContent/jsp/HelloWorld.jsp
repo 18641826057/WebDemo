@@ -7,12 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/HelloWorld.css">
 <title>HelloWorld</title>
 </head>
 <body>
 <h2>This is HelloWorld Page.</h2>
-Hello World, Welcome:<s:property value="name"/> 访问我们的网站！<br>
-<table style="border:1px solid" align="center" cellspacing="0">
+Hello World, Welcome:<s:property value="name"/> 访问我们的网站！<br><br><br>
+<table id="table" style="border:1px solid" align="center" cellspacing="0">
 	<tr align="center">
 		<td width="50px" style="border:1px solid">ID</td>
 		<td width="100px" style="border:1px solid">学生姓名</td>
